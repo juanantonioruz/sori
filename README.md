@@ -3,7 +3,7 @@
 A website written in noir. 
 Here it is on-line
 
-http://el-sori.herokuapp.com/
+http://el-sori.herokuapp.com/welcome
 
 ## Usage
 
