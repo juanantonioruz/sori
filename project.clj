@@ -3,5 +3,6 @@
             :dependencies [[org.clojure/clojure "1.3.0"]
                            [noir "1.2.1"]
                            [congomongo "0.3.2"]]
-            :main sori.server)
+            :main sori.server
+            :plugins [[lein-swank "1.4.4"]])
 
