@@ -8,7 +8,7 @@ http://el-sori.herokuapp.com/welcome
 First  you need to have installed:
 + mongodb
 + create db "db" with auth user "root", password "root"
-
++ setenv var with this key/value "MONGOHQ_URL" "mongodb://root:root@127.0.0.1:27017/db"
 
 ## Usage
 
