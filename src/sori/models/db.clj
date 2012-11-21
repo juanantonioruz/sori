@@ -20,13 +20,17 @@
       (println "Initializing mongo @ " mongo-url)
       (mongo! :db (:db config) :host (:host config) :port (Integer. (:port config))) ;; Setup global mongo.
       (authenticate (:user config) (:pass config)) ;; Setup u/p.
-      (or (collection-exists? :firstcollection) ;; Create collection named 'firstcollection' if it doesn't exist.
-          (create-collection! :firstcollection)))))
+      ;; Create collection named 'firstcollection' if it doesn't exist.
+      (or (collection-exists? :firstcollection) (create-collection! :firstcollection))
+      (or (collection-exists? :users) (create-collection! :users))
+      )))
 
 
 
+(defn default-connect []
+  (maybe-init url_db)
+  )
 
-;(maybe-init url_db)
 
 ;(split-mongo-url "mongodb://root:root@127.0.0.1:27017/db")
 

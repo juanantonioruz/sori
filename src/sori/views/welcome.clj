@@ -9,8 +9,8 @@
   (:use somnium.congomongo)
   )
 
-
 (defpage "/welcome" []
+  (println "pasa por welcome")
   (maybe-init url_db )
   (let [counter 
 	(fetch-and-modify 
@@ -29,8 +29,22 @@
   [ctxt]
   [:p#message] (html/content (:message ctxt)))
 
+(html/deftemplate form-user "public/templates/contact.html"
+  [ctxt]
+  [:p#message] (html/content (:message ctxt)))
+
 
 
 (defpage "/" []
   (index {:message "ey hola"})
+  )
+(defpage "/new-user" []
+  (form-user {:message "ey hola"})
+  )
+
+(defpage [:post "/new-user" ] {:as user}
+  (maybe-init url_db )
+  (insert! :users user)
+  (str "<h1>INSERTADO OK</h1>")
+    ;(str "recibido tio!" (:name user) (:password user) (:email user) "<br>" (str user))
   )

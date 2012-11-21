@@ -3,9 +3,8 @@ pom.xml
 /lib/
 /resources/public/images/
 /resources/public/scripts/
-/resources/public/styles/
-/resources/public/templates/
 /target/
 /classes/
 .lein-deps-sum
 *.DS_Store
+!resources/public/templates/contact.html
