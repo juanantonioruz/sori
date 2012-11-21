@@ -9,3 +9,6 @@
     (server/start port {:mode mode
                         :ns 'sori})))
 
+(defn arranca []
+  (server/start 8080))
+;(arranca)

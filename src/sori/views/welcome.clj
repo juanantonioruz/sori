@@ -1,5 +1,6 @@
 (ns sori.views.welcome
-  (:require [sori.views.common :as common])
+  (:require  [sori.views.common :as common])
+  (:require [net.cgrand.enlive-html :as html])
   (use noir.core
        hiccup.core
        hiccup.page-helpers
@@ -22,4 +23,14 @@
 
 (defpage "/welcome-sori" []
          (common/layout
-           [:p "Welcome to sori"]))
+          [:p "Welcome to sori"]))
+
+(html/deftemplate index "public/templates/index.html"
+  [ctxt]
+  [:p#message] (html/content (:message ctxt)))
+
+
+
+(defpage "/" []
+  (index {:message "ey hola"})
+  )
