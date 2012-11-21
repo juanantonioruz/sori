@@ -1,8 +1,8 @@
 pom.xml
 *jar
 /lib/
-/resources/public/images/
-/resources/public/scripts/
+#/resources/public/images/
+#/resources/public/scripts/
 /target/
 /classes/
 .lein-deps-sum
