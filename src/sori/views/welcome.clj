@@ -33,11 +33,19 @@
   [ctxt]
   [:p#message] (html/content (:message ctxt)))
 
+(html/deftemplate base "public/templates/base.html"
+  [ctxt]
+  
+  [:div.wrapper] (html/content (:message ctxt))
+   [:ul#nav :li ] (html/add-class "current")
+
+  )
 
 
 (defpage "/" []
-  (index {:message "ey hola"})
+  (base {:message "ey hola"})
   )
+
 (defpage "/new-user" []
   (form-user {:message "ey hola"})
   )
