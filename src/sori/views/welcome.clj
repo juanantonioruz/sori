@@ -1,13 +1,23 @@
 (ns sori.views.welcome
   (:require  [sori.views.common :as common])
   (:require [net.cgrand.enlive-html :as html])
+  (:require noir.request)
+    (:require [noir.response :exlude [empty]])
   (use noir.core
        hiccup.core
        hiccup.page-helpers
+       noir.request
+       
+      
        )
+  (:use [ noir.response :exclude [empty]])
   (:use [sori.models.db])
   (:use somnium.congomongo)
   )
+
+
+
+
 
 (defpage "/welcome" []
   (println "pasa por welcome")
@@ -41,11 +51,29 @@
 
   )
 
-
-(defpage "/" []
-  (base {:message "ey hola"})
+(defn plantilla []
+  (html/emit* (common/plantillea (:uri (ring-request ))))
+     ; (base {:message "ey hola"})
   )
 
+(defpage "/about" []
+  (plantilla) 
+   )
+(defpage "/about" []
+   (plantilla)
+   )
+(defpage "/menu" []
+   (plantilla)
+   )
+(defpage "/gallery" []
+   (plantilla)
+  )
+(defpage "/reviews" []
+   (plantilla)
+   )
+(defpage "/contact" []
+   (plantilla)
+  )
 (defpage "/new-user" []
   (form-user {:message "ey hola"})
   )
