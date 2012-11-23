@@ -52,11 +52,17 @@
   )
 
 (defn plantilla []
-  (html/emit* (common/plantillea (:uri (ring-request ))))
+  (let [
+        option (:uri (ring-request))
+        menu-plantilla (common/plantillea option)
+        result-html (common/submenu menu-plantilla option)]
+(html/emit* result-html)
+    )
+  
      ; (base {:message "ey hola"})
   )
 
-(defpage "/about" []
+(defpage "/home" []
   (plantilla) 
    )
 (defpage "/about" []
