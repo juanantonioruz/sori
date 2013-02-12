@@ -3,6 +3,7 @@
 A website written in noir. 
 Here it is on-line
 http://el-sori.herokuapp.com/welcome
+http://el-sori.herokuapp.com/home
 
 ##  LOCAL INSTALLATION
 First  you need to have installed:
